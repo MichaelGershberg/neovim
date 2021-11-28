@@ -1,4 +1,4 @@
-return require('packer').startup(function()
+return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'shaunsingh/nord.nvim'
   use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}
@@ -26,5 +26,6 @@ return require('packer').startup(function()
   use 'hrsh7th/vim-vsnip'
   use 'onsails/lspkind-nvim'
   use 'terrortylor/nvim-comment'
+  use 'lukas-reineke/format.nvim'
 
 end)

@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/home/michael/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
     url = "https://github.com/hrsh7th/cmp-vsnip"
   },
+  ["format.nvim"] = {
+    loaded = true,
+    path = "/home/michael/.local/share/nvim/site/pack/packer/start/format.nvim",
+    url = "https://github.com/lukas-reineke/format.nvim"
+  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/home/michael/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
