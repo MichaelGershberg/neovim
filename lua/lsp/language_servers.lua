@@ -1,18 +1,17 @@
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
--- 
--- require'lspconfig/configs'.ls_emmet = {
---   default_config = {
---     cmd = { 'ls_emmet', '--stdio' };
---     filetypes = { 'html', 'css', 'scss', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'haml',
---       'xml', 'xsl', 'pug', 'slim', 'sass', 'stylus', 'less', 'sss'};
---     root_dir = function(_)
---       return vim.loop.cwd()
---     end;
---     settings = {};
---   };
--- }
+require'lspconfig/configs'.emmet_ls= {
+  default_config = {
+    cmd = { 'emmet_ls','--stdio' };
+    filetypes = { 'html', 'css', 'scss', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'haml',
+      'xml', 'xsl', 'pug', 'slim', 'sass', 'stylus', 'less', 'sss'};
+    root_dir = function(_)
+      return vim.loop.cwd()
+    end;
+    settings = {};
+  };
+}
 
 local system_name
 if vim.fn.has("mac") == 1 then
@@ -24,7 +23,7 @@ elseif vim.fn.has('win32') == 1 then
 else
   print("Unsupported system for sumneko")
 end
--- 
+
 -- set the path to the sumneko installation; if you previously installed via the now deprecated :LspInstall, use
 local sumneko_root_path = '/home/michael/.config/nvim/lua-language-server'
 local sumneko_binary = sumneko_root_path.."/bin/"..system_name.."/lua-language-server"
@@ -32,7 +31,6 @@ local sumneko_binary = sumneko_root_path.."/bin/"..system_name.."/lua-language-s
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
---table.insert(runtime_path, "/home/michael/.local/lib/python3.9/site-packages")
 
 
 local langservers = {
@@ -40,7 +38,7 @@ local langservers = {
   'cssls',
   'tsserver',
   'pylsp',
-  -- 'ls_emmet',
+  'emmet_ls',
   'sumneko_lua',
   'clangd'
 }
