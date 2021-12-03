@@ -28,5 +28,6 @@ return require('packer').startup(function(use)
   use 'terrortylor/nvim-comment'
   use 'lukas-reineke/format.nvim'
   use 'lukas-reineke/indent-blankline.nvim'
+  use 'norcalli/nvim-colorizer.lua'
 
 end)
