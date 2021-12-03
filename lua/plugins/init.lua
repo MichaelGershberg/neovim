@@ -27,5 +27,6 @@ return require('packer').startup(function(use)
   use 'onsails/lspkind-nvim'
   use 'terrortylor/nvim-comment'
   use 'lukas-reineke/format.nvim'
+  use 'lukas-reineke/indent-blankline.nvim'
 
 end)
