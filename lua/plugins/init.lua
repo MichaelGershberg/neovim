@@ -29,5 +29,13 @@ return require('packer').startup(function(use)
   use 'lukas-reineke/format.nvim'
   use 'lukas-reineke/indent-blankline.nvim'
   use 'norcalli/nvim-colorizer.lua'
-
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    },
+    config = function()
+      require('gitsigns').setup{current_line_blame = true}
+    end
+  }
 end)
